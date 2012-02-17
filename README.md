@@ -33,3 +33,42 @@ yeah, that's a little gross, but those are the breaks.
 
 you will also need to have the "Mercurial" python package installed:
    http://pypi.python.org/pypi/Mercurial/0.9
+
+or you may `pip install mercurial`
+
+## Using
+
+```
+hg review [-t TITLE] [-e | -c COMMENT] [-p PEOPLE] [-r REV] [repo]
+
+aliases: scrutinize
+
+create a code review for some changesets on kiln
+
+    Review creates a brand new code review on kiln for a changeset on kiln. If
+    no revision is specified, the code review defaults to the most recent
+    changeset.
+
+    Specify people to peek at your review by passing a comma-separated list of
+    people to review your code, by passing multiple -p flags, or both. hg
+    review -p tim,alex,ben -p joey
+
+    You can specify revisions by passing a hash-range,
+      hg review -r 13bs32abc:tip
+
+    or by passing individual changesets
+      hg review -r 75c471319a5b -r 41056495619c
+
+    Using -e will open up your favorite editor and includes all the changeset
+    descriptions for any revisions selected as the code review comment.
+
+use "hg help -e review" to show help for the review extension
+
+options:
+
+ -t --title TITLE           use text as default title for code review
+ -c --comment COMMENT       use text as default comment for code review
+ -r --revs REV [+]          revisions for review, otherwise defaults to "tip"
+ -p --people REVIEWERS [+]  people to include in the review, comma separated
+ -e --editor                invoke your editor for default comment
+```
