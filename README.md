@@ -21,11 +21,15 @@ save the `review.py` wherever and in your `~/.hgrc` or just repo/.hg/hgrc add
     [extensions]
 	review = /path/to/review.py
 
-you'll need to add the following as well to your hgrc file:
+you'll need to add the following as well to your hgrc file (use your
+actual name and password instead):
 
     [auth]
 	kiln.prefix = https://kilnrepo.kilnhg.com
 	kiln.username = tim@kilnorg.com
 	kiln.password = keymash
 
-yeah, that's a little gross, but those are the breaks
+yeah, that's a little gross, but those are the breaks.
+
+you will also need to have the "Mercurial" python package installed:
+   http://pypi.python.org/pypi/Mercurial/0.9
